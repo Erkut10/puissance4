@@ -20,4 +20,25 @@ function poserJeton(colonne: number, joueur: string): boolean {
   return false;
 }
 
+// on va vérifier la victoire en regardant si il y a 4 jetons alignées dans les directions possibles
+function verifierVictoire(joueur: string): boolean {
+  // horizontal
+  for (let l=0;l<LIGNES;l++)
+    for (let c=0;c<=COLONNES-4;c++)
+      if (grille[l][c]===joueur && grille[l][c+1]===joueur && grille[l][c+2]===joueur && grille[l][c+3]===joueur) return true;
+  // vertical
+  for (let c=0;c<COLONNES;c++)
+    for (let l=0;l<=LIGNES-4;l++)
+      if (grille[l][c]===joueur && grille[l+1][c]===joueur && grille[l+2][c]===joueur && grille[l+3][c]===joueur) return true;
+  // diagonale ↘
+  for (let l=0;l<=LIGNES-4;l++)
+    for (let c=0;c<=COLONNES-4;c++)
+      if (grille[l][c]===joueur && grille[l+1][c+1]===joueur && grille[l+2][c+2]===joueur && grille[l+3][c+3]===joueur) return true;
+  // diagonale ↙
+  for (let l=3;l<LIGNES;l++)
+    for (let c=0;c<=COLONNES-4;c++)
+      if (grille[l][c]===joueur && grille[l-1][c+1]===joueur && grille[l-2][c+2]===joueur && grille[l-3][c+3]===joueur) return true;
+  return false;
+}
+
 
