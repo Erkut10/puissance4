@@ -41,4 +41,11 @@ function verifierVictoire(joueur: string): boolean {
   return false;
 }
 
+// on va choisir une colonne aléatoire pour jouer
+function colonneAleatoire(): number {
+  const colonnesDispo:number[]=[];
+  for (let c=0;c<COLONNES;c++) if (grille[0][c]===VIDE) colonnesDispo.push(c);
+  return colonnesDispo[Math.floor(Math.random()*colonnesDispo.length)];
+}
+
 
