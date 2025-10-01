@@ -48,4 +48,18 @@ function colonneAleatoire(): number {
   return colonnesDispo[Math.floor(Math.random()*colonnesDispo.length)];
 }
 
+// le jeu se joue automatiquement donc jusqu'à la fin
+let joueur = JOUEUR1;
+let gagnant = '';
+let coups = 0;
+
+while (true) {
+  const colonne = colonneAleatoire();
+  poserJeton(colonne, joueur);
+  coups++;
+  if (verifierVictoire(joueur)) { gagnant = joueur; break; }
+  if (grille[0].every(c=>c!==VIDE)) break; // match nul
+  joueur = joueur===JOUEUR1 ? JOUEUR2 : JOUEUR1;
+}
+
 
