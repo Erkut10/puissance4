@@ -62,4 +62,9 @@ while (true) {
   joueur = joueur===JOUEUR1 ? JOUEUR2 : JOUEUR1;
 }
 
-
+// on va afficher le résultat final dans la console sur playground ts
+console.log('\n=== GRILLE FINALE ===\n');
+for (let l=0;l<LIGNES;l++) console.log(grille[l].join(' '));
+console.log('\nRésultat :');
+if (gagnant) console.log(` Joueur ${gagnant} a gagné après ${coups} coups ! `);
+else console.log('Match nul !');
