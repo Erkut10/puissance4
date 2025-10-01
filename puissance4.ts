@@ -1,4 +1,5 @@
 // Projet Puissance 4 qui se joue automatiquement et nous affiche le résultat final
+// Erkut ELYILDIRIM
 
 // on déclare nos constantes
 const LIGNES = 6;
