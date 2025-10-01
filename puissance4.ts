@@ -11,3 +11,13 @@ const JOUEUR2 = 'J';
 let grille: string[][] = [];
 for (let i = 0; i < LIGNES; i++) grille.push(Array(COLONNES).fill(VIDE));
 
+
+// pour placer un jeton
+function poserJeton(colonne: number, joueur: string): boolean {
+  for (let ligne = LIGNES-1; ligne>=0; ligne--) {
+    if (grille[ligne][colonne]===VIDE) { grille[ligne][colonne]=joueur; return true; }
+  }
+  return false;
+}
+
+
