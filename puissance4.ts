@@ -30,6 +30,11 @@ function verifierVictoire(joueur: string): boolean {
   for (let c=0;c<COLONNES;c++)
     for (let l=0;l<=LIGNES-4;l++)
       if (grille[l][c]===joueur && grille[l+1][c]===joueur && grille[l+2][c]===joueur && grille[l+3][c]===joueur) return true;
+
+
+
+      
+      if (grille[l][c]===joueur && grille[l+1][c]===joueur && grille[l+2][c]===joueur && grille[l+3][c]===joueur) return true;
   // diagonale ↘
   for (let l=0;l<=LIGNES-4;l++)
     for (let c=0;c<=COLONNES-4;c++)
