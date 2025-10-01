@@ -7,3 +7,7 @@ const VIDE = '.';
 const JOUEUR1 = 'R';
 const JOUEUR2 = 'J';
 
+// on va créer une grille vide avec un tableau en 2d pour notre plateau
+let grille: string[][] = [];
+for (let i = 0; i < LIGNES; i++) grille.push(Array(COLONNES).fill(VIDE));
+
